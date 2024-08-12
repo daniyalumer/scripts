@@ -59,25 +59,25 @@ done
 
 shift $((OPTIND - 1))
 
-# Debug output
+# Debugging output
 echo "Save path: $save_path"
 echo "File name: $file_name"
 echo "Resolution: $resolution"
 
-# Construct URL and output path
+# Constructing URL and output path
 url="https://picsum.photos/$resolution"
 output_path="$save_path/$file_name.jpg"
 
 echo "URL: $url"
 echo "Output path: $output_path"
 
-# Make sure the directory exists
+# Making sure the directory exists
 mkdir -p "$save_path"
 
-# Download the image
+# Downloading image
 wget -O "$output_path" "$url"
 
-# Check if the file was downloaded
+# Checking if the file was downloaded
 if [ -f "$output_path" ]; then
     echo "Image Downloaded Successfully"
 else

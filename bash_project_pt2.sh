@@ -66,10 +66,6 @@ done
 
 shift $((OPTIND - 1))
 
-# Expand paths and copy the script to the home directory
-script_source=$(eval echo "$script_source")
-script_destination=$(eval echo "$script_destination")
-
 cp "$script_source" "$script_destination"
 if [ $? -eq 0 ]; then
     echo "Script copied successfully to $script_destination"
